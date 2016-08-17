@@ -1,11 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './components/App';
 
-if(process.env.NODE_ENV !== 'production') {
-  React.Perf = require('react-addons-perf');
-}
+import store from './store'
 
-ReactDOM.render(
-  <div>Hello world</div>,
-  document.getElementById('app')
-);
+const app = document.getElementById('app');
+
+
+
+//Whatever you would normally render, render the provider instead (to use redux)
+//Also inject the store
+//Any component anywhere down the chain can import data from the redux store
+
+
+    ReactDOM.render(
+        <Provider store={store}>
+
+            <App />
+
+        </Provider>, app);
+

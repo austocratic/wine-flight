@@ -1,6 +1,61 @@
+
+h1 {
+  font-size: 250%;
+}
+
+
+
 body {
   background-color: cornsilk;
 
   font-family: sans-serif;
 }
 
+.tasting{
+
+
+}
+
+.tasting_container{
+  border-style: solid;
+  border-width: 5px;
+
+  height: 300px;
+  width: 1000px;
+}
+/*
+.tasting_container:hover {
+  border-style: solid;
+  border-width: 5px;
+
+  height: 300px;
+  width: 1000px;
+
+}*/
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tasting_image{
+
+  display: inline-block;
+
+  height: 200px;
+  width: 75px;
+
+}
+
+
+.tasting_description {
+
+  float: right;
+
+  display: inline-block;
+
+  background-color: #fdfdfd;
+  height: 100px;
+  width: 500px;
+
+}
