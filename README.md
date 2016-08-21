@@ -1,8 +1,10 @@
-# react-boilerplate - Boilerplate for "SurviveJS - React"
+# wine-flight app
 
-See [SurviveJS - React](http://survivejs.com/react/introduction/) for the book.
+I am building this app to learn React-Redux.
 
-## Getting Started
+Based on the react-boilerplate - Boilerplate for "SurviveJS - React" See [SurviveJS - React](http://survivejs.com/react/introduction/) for the book.
+
+## Getting Started (per react-boilerplate
 
 1. `npm i` - Install dependencies. This might take a while.
 2. `npm start` - Run development build. If it doesn't start, make sure you aren't running anything else in the same port. In case you are on a Unix platform, you can try `PORT=3000 npm start`. It will pick up the port from the environment if it's set.
