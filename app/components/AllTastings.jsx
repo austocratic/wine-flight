@@ -11,13 +11,16 @@ export default (
 ) => (
 
     <ul>
-        {favorites.map( favorites =>
+        {favorites.map( (favorites, index) =>
             <li key={favorites.id}>
 
                 <Tasting className="tasting"
+                         favoritesKey={index}
                          description={favorites.attributes.description}
                          bottle_image={favorites.attributes.bottle_image}
-                         myRatings={favorites.myRatings}>
+                         myRatings={favorites.myRatings}
+                    {...favorites}
+                >
 
                 </Tasting>
             </li>

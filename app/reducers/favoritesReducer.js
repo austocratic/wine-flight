@@ -1,6 +1,5 @@
 
-
-export default function reducer(state={
+const initialState = {
     favorites: [{
         id: 1,
         attributes: {
@@ -9,10 +8,22 @@ export default function reducer(state={
             description: 'Crafted with artisanal techniques typically reserved for the most revered labels, it’s the perfect go-to red.'
         },
         myRatings: {
-            acidity: 'not set',
-            elegance: 'not set',
-            taste: 'not set',
-            total: 'not set'
+            acidity: {
+                value: 'Click to set',
+                editing: false
+            },
+            elegance: {
+                value: 'Click to set',
+                editing: false
+            },
+            taste: {
+                value: 'Click to set',
+                editing: false
+            },
+            total: {
+                value: 'Click to set',
+                editing: false
+            }
         }
     },
         {
@@ -24,17 +35,33 @@ export default function reducer(state={
                 description: 'For more than 25 vintages, ISOSCELES has been our flagship wine and quality benchmark for this style of wine here on the Central Coast of California. A blend based on cabernet sauvignon supported by cabernet franc and merlot, the 2013 ISOSCELES is a perfect example of what makes Paso Robles such a great place to grow these varieties.'
             },
             myRatings: {
-                acidity: 'not set',
-                elegance: 'not set',
-                taste: 'not set',
-                total: 'not set'
+                acidity: {
+                    value: 'Click to set',
+                    editing: false
+                },
+                elegance: {
+                    value: 'Click to set',
+                    editing: false
+                },
+                taste: {
+                    value: 'Click to set',
+                    editing: false
+                },
+                total: {
+                    value: 'Click to set',
+                    editing: false
+                }
             }
         }],
     fetching: false,
     fetched: false,
-    error: null
-}, action) {
+    error: null,
+    otherTest: {
+        test1: 'Value not set'
+    }
+};
 
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case 'RATE_ACIDITY':
         {
@@ -47,12 +74,31 @@ export default function reducer(state={
         case 'RATE_TASTE':
         {
 
-            var modState = state;
+            var modState = { ...state };
 
-            modState.favorites[0].myRatings.taste = action.payload;
+            modState.favorites[0].myRatings.taste.value = action.payload;
 
             return modState;
             
+        }
+
+        case 'SET_RATING':
+        {
+
+            let newState = { ...state };
+
+            newState.favorites[action.payload.elementID].myRatings[action.payload.toChange].value = action.payload.changedValue;
+
+            return newState;
+
+        }
+        case 'EDITING_RATING':
+        {
+            let newState = { ...state };
+
+            newState.favorites[action.payload.elementID].myRatings[action.payload.toChange].editing = action.payload.editing;
+
+            return newState;
         }
     }
 

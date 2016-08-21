@@ -20,7 +20,8 @@ export default (props) =>
         </div>
 
         <div>
-            <Ratings myRatings={props.myRatings}>
+
+            <Ratings {...props} myRatings={props.myRatings}>
 
             </Ratings>
 
